@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header, .footer { text-align: center; padding: 10px; background: #f8f8f8; }
+        .content { margin: 20px 0; }
+        .section { margin-bottom: 20px; }
+        .section-title { font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .section-content { margin-left: 20px; }
+        .footer { font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{.Header.Title}}</h1>
+        <p>{{.Header.Subtitle}}</p>
+    </div>
+    <div class="content">
+        <div class="section">
+            <div class="section-title">Introduction</div>
+            <div class="section-content">
+                <p>{{.Introduction}}</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Details</div>
+            <div class="section-content">
+                <ul>
+                    {{range .Details}}
+                    <li>{{.}}</li>
+                    {{end}}
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Statistics</div>
+            <div class="section-content">
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>Category</th>
+                        <th>Value</th>
+                    </tr>
+                    {{range .Statistics}}
+                    <tr>
+                        <td>{{.Category}}</td>
+                        <td>{{.Value}}</td>
+                    </tr>
+                    {{end}}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>{{.Footer.Text}}</p>
+    </div>
+</body>
+</html>

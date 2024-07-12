@@ -1,0 +1,21 @@
+{
+    "Title": "Complex Document Example",
+    "Header": {
+        "Title": "Document Title",
+        "Subtitle": "Document Subtitle"
+    },
+    "Introduction": "This is an example of a more complex document. It includes multiple sections with various types of data.",
+    "Details": [
+        "Detail 1",
+        "Detail 2",
+        "Detail 3"
+    ],
+    "Statistics": [
+        { "Category": "Stat 1", "Value": "100" },
+        { "Category": "Stat 2", "Value": "200" },
+        { "Category": "Stat 3", "Value": "300" }
+    ],
+    "Footer": {
+        "Text": "This is the footer text."
+    }
+}
