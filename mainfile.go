@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	// "encoding/json"
 	"fmt"
 	"html/template"
 	"io"
@@ -30,30 +31,17 @@ func createOutput(c *gin.Context){
 		return
 	}
 
-	//receive the json file
-	jsonFile, _, err := c.Request.FormFile("data")
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
-		return
-	}
-	defer jsonFile.Close()
-
-	//read the contents of the json file
-	jsonBytes, err := io.ReadAll(jsonFile)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
-		return
-	}
+	// Get the raw JSON data from the form field
+	jsonData := c.PostForm("data")
 
 	//create a map to store the json data
 	var data map[string]interface{}
-
-	//unmarshal the json data into the map
-	err = json.Unmarshal(jsonBytes, &data)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
+	// err := c.BindJson(&data)
+	if err := json.Unmarshal([]byte(jsonData), &data); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid JSON data: " + err.Error()})
 		return
 	}
+
 
 	//parse the html template
 	t, err := template.New("upload").Parse(string(templateBytes))
@@ -95,6 +83,7 @@ func createOutput(c *gin.Context){
 		c.JSON(http.StatusInternalServerError, gin.H{"message": err.Error()})
 		return
 	}
+	c.JSON(http.StatusCreated, gin.H{"message": "PDF generated successfully."})
 }
 
 //helper function to generate pdf file name based on the template file name	

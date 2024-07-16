@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notification of Appointment of Director and Secretary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .signature {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .signature p {
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container"> -->
+        <!-- <h2>Company form 20 Reg 26(3)</h2> -->
+        <h2>THE REPUBLIC OF UGANDA</h2>
+        <h2>THE COMPANIES ACT 2012</h2>
+        <h1>NOTIFICATION OF APPOINTMENT OF DIRECTOR AND SECRETARY OF COMPANY</h1>
+        <h4>(Under section 192 (1) (4) of the Act)</h4>
+        
+        <div class="details">
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Company Name</th>
+                        <td>{{.CompanyName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Presented By</th>
+                        <td>{{.PresentedBy}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">(a) PARTICULARS OF DIRECTORS - INDIVIDUALS</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date of Birth</th>
+                            <th>Address</th>
+                            <th>Nationality</th>
+                            <th>Occupation</th>
+                            <th>Other Directorships</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .Directors}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.DateOfBirth}}</td>
+                            <td>{{.Address}}</td>
+                            <td>{{.Nationality}}</td>
+                            <td>{{.Occupation}}</td>
+                            <td>{{.OtherDirectorships}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">PARTICULARS OF CORPORATE DIRECTORS</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Postal Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .CorporateDirectors}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.Address}}</td>
+                            <td>{{.PostalAddress}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title">(b) PARTICULARS OF THE PERSON(S) WHO IS SECRETARY</h3>
+            <h4 class="section-title">PARTICULARS OF INDIVIDUAL SECRETARY</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Residential Address</th>
+                            <th>Postal Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .IndividualSecretaries}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.ResidentialAddress}}</td>
+                            <td>{{.PostalAddress}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h4 class="section-title">PARTICULARS OF CORPORATE SECRETARY</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Registered Office</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .CorporateSecretaries}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.RegisteredOffice}}</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="signature">
+            <p>Dated the {{.Day}} day of {{.Month}} the year {{.Year}}</p>
+            <p>Signed: ......................................... (Director)</p>
+            <p>Signed: ......................................... (Secretary)</p>
+        </div>
+    <!-- </div> -->
+</body>
+</html>

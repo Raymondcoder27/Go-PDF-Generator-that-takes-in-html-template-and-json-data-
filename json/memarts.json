@@ -1,0 +1,41 @@
+{
+    "companyNameHere": "NEW COMPANY",
+    "office": "Your Office Location",
+    "objectives": [
+        "Objective 1",
+        "Objective 2",
+        "Objective 3"
+    ],
+
+    "directors":[
+        {
+            "name":"my name",
+            "email":"my mail.com"
+        },
+        {
+            "name":"my name 2",
+            "email":"my mail.com 2"
+        }
+    ]
+    ,
+    "liability": "limited",
+    "shareCapital": "Your Share Capital",
+    "subscribers": [
+        {
+            "name": "Subscriber 1",
+            "occupation": "Occupation 1",
+            "shares": "10"
+        },
+        {
+            "name": "Subscriber 2",
+            "occupation": "Occupation 2",
+            "shares": "20"
+        }
+    ],
+    "totalShares": 30,
+    "day": "21",
+    "month": "June",
+    "year": "2024",
+    "adoptTableII": true,
+    "adoptTableIIWithModification": false
+}

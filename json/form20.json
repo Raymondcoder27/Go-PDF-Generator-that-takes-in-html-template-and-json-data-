@@ -1,0 +1,38 @@
+{
+    "CompanyName": "ABC Corp",
+    "PresentedBy": "John Doe",
+    "Directors": [
+      {
+        "Name": "Jane Smith",
+        "DateOfBirth": "1980-01-01",
+        "Address": "123 Main St, Cityville",
+        "Nationality": "American",
+        "Occupation": "Engineer",
+        "OtherDirectorships": "XYZ Ltd"
+      }
+    ],
+    "CorporateDirectors": [
+      {
+        "Name": "Corporate Director Ltd",
+        "Address": "456 Corporate St, Business City",
+        "PostalAddress": "PO Box 789"
+      }
+    ],
+    "IndividualSecretaries": [
+      {
+        "Name": "John Doe",
+        "ResidentialAddress": "789 Home St, Hometown",
+        "PostalAddress": "PO Box 123"
+      }
+    ],
+    "CorporateSecretaries": [
+      {
+        "Name": "Corporate Secretary Inc",
+        "RegisteredOffice": "101 Secretary Ave, Office City"
+      }
+    ],
+    "Day": "15th",
+    "Month": "July",
+    "Year": "2024"
+  }
+  
